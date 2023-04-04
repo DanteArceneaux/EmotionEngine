@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation('org.springframework.boot:spring-boot-starter-logging') {
+        exclude group: 'ch.qos.logback', module: 'logback-classic'
+    }
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'edu.stanford.nlp:stanford-corenlp:4.5.3'
+    implementation 'edu.stanford.nlp:stanford-corenlp:4.5.3:models'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.1.5'
+}
+
+
+test {
+    useJUnitPlatform()
+}
