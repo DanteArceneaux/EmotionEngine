@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f9ae985-a186-45e2-b3cc-64e33f6b88c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/SentimentAnalyzerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/controllers/SentimentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/exceptions/RateLimitException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/models/SentimentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/models/SentimentResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/models/TextRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/services/ApiKeyAuthenticator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/services/SentimentAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/services/rateLimiting/RateLimiter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/utils/StopWords.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/my_word_list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/stopwords.txt" afterDir="false" />
+    <list default="true" id="1f9ae985-a186-45e2-b3cc-64e33f6b88c3" name="Changes" comment="Created a simple SentimentAnalyzer.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +68,7 @@
     "RequestMappingsPanelWidth1": "75",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -183,7 +156,23 @@
       <option name="presentableId" value="Default" />
       <updated>1680518236543</updated>
       <workItem from="1680518247339" duration="36089000" />
+      <workItem from="1680602836967" duration="809000" />
     </task>
+    <task id="LOCAL-00001" summary="Created a simple SentimentAnalyzer.">
+      <created>1680603166117</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680603166117</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created a simple SentimentAnalyzer.">
+      <created>1680603192101</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680603192101</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,5 +188,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created a simple SentimentAnalyzer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a simple SentimentAnalyzer." />
   </component>
 </project>
