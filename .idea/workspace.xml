@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f9ae985-a186-45e2-b3cc-64e33f6b88c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/config/CorsConfig.java" afterDir="false" />
+    <list default="true" id="1f9ae985-a186-45e2-b3cc-64e33f6b88c3" name="Changes" comment="Created a simple SentimentAnalyzer.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/services/WordScore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/negation_words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/TouchAPI/models/SentimentResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/models/SentimentResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/TouchAPI/services/SentimentAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/TouchAPI/services/SentimentAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/my_word_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/my_word_list.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +165,8 @@
       <updated>1680518236543</updated>
       <workItem from="1680518247339" duration="36089000" />
       <workItem from="1680602836967" duration="809000" />
+      <workItem from="1680626576721" duration="1199000" />
+      <workItem from="1680662675315" duration="13175000" />
     </task>
     <task id="LOCAL-00001" summary="Created a simple SentimentAnalyzer.">
       <created>1680603166117</created>

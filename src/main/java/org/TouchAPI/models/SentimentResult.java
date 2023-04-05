@@ -3,15 +3,28 @@ package org.TouchAPI.models;
 import edu.stanford.nlp.pipeline.CoreNLPProtos;
 
 public class SentimentResult {
+    private CoreNLPProtos.Sentiment sentiment;
     private int sentimentScore;
     private int wordCount;
 
-    private CoreNLPProtos.Sentiment sentiment;
+    public SentimentResult() {
 
-    // Constructor
-    public SentimentResult() {}
+    }
 
-    // Getters and setters
+    public SentimentResult(CoreNLPProtos.Sentiment sentiment, int sentimentScore, int wordCount) {
+        this.sentiment = sentiment;
+        this.sentimentScore = sentimentScore;
+        this.wordCount = wordCount;
+    }
+
+    public CoreNLPProtos.Sentiment getSentiment() {
+        return sentiment;
+    }
+
+    public void setSentiment(CoreNLPProtos.Sentiment sentiment) {
+        this.sentiment = sentiment;
+    }
+
     public int getSentimentScore() {
         return sentimentScore;
     }
@@ -26,15 +39,5 @@ public class SentimentResult {
 
     public void setWordCount(int wordCount) {
         this.wordCount = wordCount;
-    }
-
-
-
-    public CoreNLPProtos.Sentiment getSentiment() {
-        return sentiment;
-    }
-
-    public void setSentiment(CoreNLPProtos.Sentiment sentiment) {
-        this.sentiment = sentiment;
     }
 }

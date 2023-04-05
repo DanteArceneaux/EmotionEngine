@@ -19,8 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,7 +35,8 @@ public class SentimentAnalyzer {
 
     private static final Logger logger = Logger.getLogger(SentimentAnalyzer.class.getName());
 
-    private static Map<String, Integer> wordList = new HashMap<String, Integer>();
+    private static Map<String, Double> wordList =
+            new HashMap<String, Double>();
     private static Set<String> stopWords = null;
 
     static {
@@ -90,23 +93,23 @@ public class SentimentAnalyzer {
                     wordCount++;
 
                     if (wordList.containsKey(word)) {
-//                        emotionalWordCount++;
-                        int score = wordList.get(word);
-                        if (score > 0) {
-//                            positiveWordCount++;
+                        Double wordScore = wordList.get(word);
+                        double score = wordScore.doubleValue();
+                        if (Double.compare(score, 0.0) > 0) {
                             sentimentScore += score;
-
-                        } else if (score < 0) {
-//                            negativeWordCount++;
+                        } else if (Double.compare(score, 0.0) < 0) {
                             sentimentScore += score;
                         }
                     }
+
+
                 }
             }
         }
 
         if (numOfSentences > 0) {
-            double sentimentAvg = (double) sentimentScore / numOfSentences;
+            int sentimentAvg = sentimentScore / numOfSentences;
+
             result.setSentiment(scoreToSentiment(sentimentAvg));
         } else {
             result.setSentiment(CoreNLPProtos.Sentiment.NEUTRAL);
@@ -146,14 +149,14 @@ public class SentimentAnalyzer {
         }
     }
 
-    private CoreNLPProtos.Sentiment scoreToSentiment(double score) {
-        if (score <= -1.0) {
+    private CoreNLPProtos.Sentiment scoreToSentiment(int score) {
+        if (score <= -1) {
             return CoreNLPProtos.Sentiment.STRONG_NEGATIVE;
         } else if (score <= -0.5) {
             return CoreNLPProtos.Sentiment.WEAK_NEGATIVE;
         } else if (score <= 0.5) {
             return CoreNLPProtos.Sentiment.NEUTRAL;
-        } else if (score <= 1.0) {
+        } else if (score <= 1) {
             return CoreNLPProtos.Sentiment.WEAK_POSITIVE;
         } else {
             return CoreNLPProtos.Sentiment.STRONG_POSITIVE;
@@ -162,18 +165,19 @@ public class SentimentAnalyzer {
 
 
 
-    private static void loadWordList(String fileName) throws IOException {
-        InputStream is = SentimentAnalyzer.class.getClassLoader().getResourceAsStream(fileName);
-        Scanner scanner = new Scanner(is);
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
+    private static void loadWordList(String filename) throws IOException {
+        InputStream inputStream = SentimentAnalyzer.class.getClassLoader().getResourceAsStream(filename);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        String line;
+        while ((line = reader.readLine()) != null) {
             String[] parts = line.split("\t");
-            if (parts.length >= 2) {
-                String word = parts[0];
-                int score = Integer.parseInt(parts[1]);
-                wordList.put(word, score);
-            }
+            String word = parts[0];
+            double score = Double.parseDouble(parts[1]);
+            wordList.put(word, score);
         }
-        scanner.close();
+        reader.close();
     }
+
+
+
 }
